@@ -1,0 +1,48 @@
+{
+  "name": "docs",
+  "version": "0.44.1",
+  "private": true,
+  "description": "喜马收银台文档库",
+  "license": "MIT",
+  "scripts": {
+    "analyze": "cross-env ANALYZE_PORT=8888 ANALYZE=1 dumi dev",
+    "build": "father build",
+    "build:watch": "father dev",
+    "dev": "cross-env DUMI_PUBLIC_PATH=/ dumi dev",
+    "dev-mobile": "cross-env HMR=none DUMI_PUBLIC_PATH=/ dumi dev",
+    "docs:build": "cross-env DUMI_PUBLIC_PATH=https://static2.test.ximalaya.com/yx/checkstand-tools/last/dist/ dumi build",
+    "doctor": "father doctor",
+    "lint:css": "stylelint \"{src,test}/**/*.{css,less,scss}\"",
+    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "dumi setup",
+    "prepublishOnly": "father doctor && npm run build",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "base-utils": "workspace:*",
+    "basic-element": "workspace:*",
+    "business-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "@umijs/lint": "^4.0.81",
+    "dumi": "^2.2.17",
+    "dumi-theme-mobile": "^2.1.2",
+    "eslint-config-custom": "workspace:^",
+    "prettier-plugin-organize-imports": "^3.2.3",
+    "prettier-plugin-packagejson": "^2.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "lang.jiang@ximalya.com"
+  ]
+}

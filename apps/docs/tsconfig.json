@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "docs": ["src"],
+      "docs/*": ["src/*", "*"]
+    }
+  },
+  "include": [
+    ".dumirc.ts",
+    "src/**/*",
+    "../../packages/checkstand/Demo/comp/service.ts",
+    "../../packages/checkstand/Demo/comp/Demo1.tsx"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "business-utils",
+  "version": "1.0.7",
+  "description": "喜马业务工具库",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "lint": "eslint",
+    "test": "jest",
+    "release": "standard-version"
+  },
+  "publishConfig": {
+    "registry": "http://xnpm.ximalaya.com/"
+  },
+  "maintainers": [
+    {
+      "name": "megalo",
+      "email": "lang.jiang@ximalaya.com"
+    }
+  ],
+  "keywords": [],
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "author": "lang.jiang@ximalaya.com",
+  "license": "ISC"
+}

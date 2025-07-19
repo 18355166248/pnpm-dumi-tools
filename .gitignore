@@ -1,0 +1,14 @@
+node_modules
+es
+lib
+dist
+
+apps/docs/.dumi/tmp
+apps/docs/.dumi/tmp/core
+apps/docs/.dumi/tmp-test
+apps/docs/.dumi/tmp/core/plugin.ts
+
+apps/docs/.dumi/tmp-production
+.DS_Store
+docs-dist
+.turbo

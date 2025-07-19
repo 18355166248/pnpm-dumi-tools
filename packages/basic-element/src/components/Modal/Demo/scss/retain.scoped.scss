@@ -1,0 +1,66 @@
+@mixin border-half-top($pos: relative, $color: #eee) {
+  position: $pos;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    background-color: $color;
+    transform: scale(0.5);
+    transform-origin: left top;
+    left: 0;
+    top: 0;
+  }
+}
+
+.modal-demo-1 {
+  .header {
+    padding: 12px 12px 4px;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    font-family: 苹方-简;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    height: 22px;
+    padding: 0 24px;
+  }
+
+  .content-txt {
+    font-family: 苹方-简;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 24px;
+    text-align: center;
+    padding: 0 12px;
+    line-height: 18px;
+    padding: 0 24px;
+  }
+
+  .footer {
+    height: 45px;
+
+    > div {
+      font-family: PingFang SC;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0em;
+      line-height: 45px;
+    }
+
+    .left {
+      color: #666666;
+      background-color: #fff;
+      @include border-half-top();
+    }
+
+    .right {
+      color: #fff;
+      background: #ff4444;
+    }
+  }
+}

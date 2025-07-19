@@ -1,0 +1,52 @@
+{
+  "name": "basic-element",
+  "version": "1.25.0",
+  "description": "",
+  "main": "./lib/index",
+  "module": "./es/index",
+  "types": "./es/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "lint": "eslint",
+    "release": "standard-version"
+  },
+  "publishConfig": {
+    "registry": "http://xnpm.ximalaya.com/"
+  },
+  "maintainers": [
+    {
+      "name": "megalo",
+      "email": "lang.jiang@ximalaya.com"
+    }
+  ],
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.1",
+    "@types/node": "^20.5.2",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "styled-components": "^5.3.1"
+  },
+  "dependencies": {
+    "@react-spring/web": "~9.5.5",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.1",
+    "react-dom": ">=17.0.1",
+    "styled-components": "^5.3.1"
+  },
+  "keywords": [],
+  "author": "lang.jiang",
+  "license": "ISC"
+}

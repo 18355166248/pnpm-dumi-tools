@@ -1,0 +1,90 @@
+{
+  "name": "pnpm-dumi-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "交易支付工具库",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "turbo run build",
+    "docs:build": "cd apps/docs && npm run docs:build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "eslint": "eslint --fix packages/basic-element/src/components/loading/dot-loading.tsx",
+    "commit": "cz",
+    "clear-nm": "snc rm",
+    "release": "cd packages/checkstand && npm run release",
+    "snc:cp": "snc cp",
+    "snc:cp:pre": "snc cp pre"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.23.4",
+    "@babel/runtime": "^7.24.0",
+    "@changesets/cli": "^2.27.8",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.5.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "antd": "^5.15.2",
+    "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.48.0",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-react": "^7.33.2",
+    "father": "^4.3.5",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "standard-version": "^9.5.0",
+    "stylelint": "^15.10.3",
+    "ts-jest": "^29.1.2",
+    "tsconfig": "workspace:*",
+    "turbo": "^1.10.15",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "pnpm@8.6.10",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "resolutions": {
+    "styled-components": "^5.3.1",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "@types/qs": "^6.9.8",
+    "@types/styled-components": "^5.1.34",
+    "axios": "^1.5.1",
+    "qs": "^6.11.2"
+  }
+}

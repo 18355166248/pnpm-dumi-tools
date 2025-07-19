@@ -1,0 +1,9 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "include": ["src", "images.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "exclude": ["dist", "build", "node_modules", "es", "lib"]
+}

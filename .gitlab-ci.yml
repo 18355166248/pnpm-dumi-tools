@@ -1,0 +1,16 @@
+pages: # 可以随便写
+  stage: deploy # 指定的阶段，不能乱写
+  script: # 对应 stage 阶段运行的命令，根据需要增删
+    - pwd
+    - ls # 打印，方便查看部署日志
+    - pnpm -v
+    - pnpm i # 安装依赖
+    - npm run docs:build # 编译文档（替换成你自己的编译命令）
+    - rm -rf public/*
+    - mkdir public
+    - cp -r docs-dist/* public # 将编译的文档产物复制到 public 目录（将 dist_docs 替换成你自己的文档编译输出目录）
+  artifacts:
+    paths:
+      - public # 指定部署目录（一般只能用 public）
+  only:
+    - xm # 指定分支有更新时才触发
