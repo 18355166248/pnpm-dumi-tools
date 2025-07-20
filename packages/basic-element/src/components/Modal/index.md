@@ -38,16 +38,16 @@ order: 1
 | getContainer      | 自定义弹窗的父容器           | HTMLElement \| (() => HTMLElement) \| null | body      |      |
 | stopPropagation   | 阻止某些事件的冒泡           | PropagationEvent[]                         | ['click'] |      |
 | disableBodyScroll | 背景蒙层是否禁用 body 滚动   | boolean                                    | true      |      |
-| afterShow         | 完全展示后触发               | () => void                                 | -         |      |
-| afterClose        | Modal 完全关闭后的回调       | () => void                                 | -         |      |
+| afterShow         | 完全展示后触发               | () =>                                  | -         |      |
+| afterClose        | Modal 完全关闭后的回调       | () =>                                  | -         |      |
 | opacity           | mask透明度                   | default \| thin \| thick \| number         | default   |      |
 | children          | 弹窗内容                     | React.ReactNode                            | -         |      |
 | mask              | 是否展示蒙层                 | boolean                                    | true      |      |
 | forceRender       | 被隐藏时是否渲染 DOM 结构    | boolean                                    | false     |      |
 | destroyOnClose    | 不可见时是否销毁 DOM 结构    | boolean                                    | false     |      |
-| onMaskClick       | 点击蒙层的回调               | (e) => void                                | -         |      |
+| onMaskClick       | 点击蒙层的回调               | (e) =>                                 | -         |      |
 | closeOnMaskClick  | 是否支持点击遮罩关闭弹窗     | boolean                                    | false     |      |
-| onClose           | 关闭时触发                   | () => void                                 | -         |      |
+| onClose           | 关闭时触发                   | () =>                                  | -         |      |
 | showCloseButton   | 是否在右上角显示关闭图标按钮 | boolean                                    | false     |      |
 | actions           | 操作按钮列表                 | Action[]                                   | []        |      |
 | closeOnAction     | 点击操作按钮后后是否关闭     | boolean                                    | false     |      |
@@ -60,7 +60,7 @@ order: 1
 | danger    | 是否为危险状态 | boolean                       | false  |
 | disabled  | 是否为禁用状态 | boolean                       | false  |
 | key       | 唯一标记       | string \| number              | -      |
-| onClick   | 点击时触发     | () => void \| Promise<void> - | -      |
+| onClick   | 点击时触发     | () =>  \| Promise<> - | -      |
 | primary   | 是否为主要状态 | boolean                       | false  |
 | style     | Action 样式    | React.CSSProperties           | -      |
 | text      | 标题           | React.ReactNode               | -      |
@@ -83,24 +83,24 @@ show 方法的返回值为一个组件控制器，包含以下属性：
 
 | 属性  | 说明     | 类型       | 默认值 |
 | ----- | -------- | ---------- | ------ |
-| close | 关闭弹窗 | () => void | -      |
+| close | 关闭弹窗 | () =>  | -      |
 
 show 只是一个很基础的方法，在实际业务中，更为常用的是下面的 alert 和 confirm 方法：
 
 #### Modal.alert
 
-alert 接受的参数同 show，但不支持 closeOnAction actions 属性，它的返回值不是一个控制器对象，而是 Promise<void>。
+alert 接受的参数同 show，但不支持 closeOnAction actions 属性，它的返回值不是一个控制器对象，而是 Promise<>。
 
 此外，它还额外支持以下属性：
 
 | 属性        | 说明               | 类型                        | 默认值 |
 | ----------- | ------------------ | --------------------------- | ------ |
 | confirmText | 确认按钮的内容     | ReactNode                   | -      |
-| onConfirm   | 点击确认按钮时触发 | () => void \| Promise<void> | -      |
+| onConfirm   | 点击确认按钮时触发 | () =>  \| Promise<> | -      |
 
 #### Modal.confirm
 
-confirm 接受的参数同 show，但不支持 closeOnAction actions 属性，它的返回值不是一个控制器对象，而是 Promise<boolean>。
+confirm 接受的参数同 show，但不支持 closeOnAction actions 属性，它的返回值不是一个控制器对象，而是 Promise<\boolean>。
 
 此外，它还额外支持以下属性：
 
@@ -108,8 +108,8 @@ confirm 接受的参数同 show，但不支持 closeOnAction actions 属性，�
 | ------------ | ------------------ | --------------------------- | ------ |
 | cancelText   | 取消按钮的内容     | ReactNode                   | 取消   |
 | confirmText  | 确认按钮的内容     | ReactNode                   | 确认   |
-| onCancel     | 点击取消按钮时触发 | () => void \| Promise<void> | -      |
-| onConfirm    | 点击确认按钮时触发 | () => void \| Promise<void> | -      |
+| onCancel     | 点击取消按钮时触发 | () =>  \| Promise<> | -      |
+| onConfirm    | 点击确认按钮时触发 | () =>  \| Promise<> | -      |
 | confirmStyle | 确认按钮样式       | React.CSSProperties         | -      |
 | cancelStyle  | 取消按钮样式       | React.CSSProperties         | -      |
 

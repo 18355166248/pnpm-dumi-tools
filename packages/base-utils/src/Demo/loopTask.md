@@ -21,6 +21,6 @@ order: 1
 | params          | 请求参数           | T                             | -      |      |
 | interval        | 最大循环次数       | number                        | 3      |      |
 | handler         | 异步任务成功回调   | (params: Res) => Promise<any> | -      |      |
-| successCallback | 成功回调           | (res: Res) => void            | -      |      |
-| errorCallback   | 失败回调           | (res: Res) => void            | -      |      |
+| successCallback | 成功回调           | (res: Res) =>                 | -      |      |
+| errorCallback   | 失败回调           | (res: Res) =>                 | -      |      |
 | timeout         | 循环执行延迟(毫秒) | number                        | 1500   |      |

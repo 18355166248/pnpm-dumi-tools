@@ -48,10 +48,6 @@ export default defineConfig({
   resolve: {
     atomDirs: [
       {
-        type: 'document',
-        dir: '../document',
-      },
-      {
         type: 'basicelement',
         dir: '../../packages/basic-element/src/components',
       },
